@@ -40,7 +40,7 @@
 * ./LinkedListExample
 *
 * Note the ./ is important because it means "run the executable from the current directory". If you 
-* leave this off your computer may not know where to look for the executabel and may fail to run it.
+* leave this off your computer may not know where to look for the executable and may fail to run it.
 */
 
 
@@ -58,7 +58,7 @@ int main () {
 	concertVenues.push_back("London");
 	concertVenues.push_back("Berlin");
 
-	// print the list:
+	// print the list to the console:
 	std::cout << "Concert Venues:" << std::endl;
 	for( auto venue : concertVenues ) {
 		std::cout << venue << std::endl;
@@ -69,20 +69,20 @@ int main () {
 	concertVenues.push_back("Beijing");
 
 	// print the list:
-	std::cout << std::endl << "After adding the Asian gigs the venues are:" << std::endl;
+	std::cout << std::endl << "After adding the Asian gigs the venues read:" << std::endl;
 	for( auto venue : concertVenues ) {
 		std::cout << venue << std::endl;
 	}
 
-	// Oh no, they double booked London and we got rejected!
+	// Oh no, they made a mistake in London and we got rejected!
 	// std::find will start at the begin iterator and step through to the end iterator
 	// looking for a match with the 3rd parameter. std::find returns an interator which 
 	// either points at the first matching element or points to the end interator when 
 	// it found nothing.
-	auto it = std::find(concertVenues.begin(), concertVenues.end(), "London");
-    if (it != concertVenues.end()) {
+	auto it1 = std::find(concertVenues.begin(), concertVenues.end(), "London");
+    if (it1 != concertVenues.end()) {
 		// if the interator doesn't point to the end of the list we remove the venue 
-        concertVenues.erase(it);
+        concertVenues.erase(it1);
     }
 
 	std::cout << std::endl << "After losing the London gig the venues are:" << std::endl;
